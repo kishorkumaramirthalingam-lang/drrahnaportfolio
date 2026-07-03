@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Rahna K Rathnan — Teaching Portfolio</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.x/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green-dark:#1B4332;--green-mid:#2D6A4F;--green-accent:#40916C;
+  --green-light:#D8F3DC;--gold:#B7950B;--gold-light:#FEF9E7;
+  --surface-0:#F8FAF9;--surface-1:#F0F5F2;--surface-2:#fff;
+  --text-primary:#1A1A1A;--text-secondary:#4A5568;--text-muted:#718096;
+  --border:#E2E8F0;--border-strong:#CBD5E0;--radius:8px;
+}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--surface-0);color:var(--text-primary);line-height:1.65;font-size:15px}
+
+/* ── NAV ── */
+nav{background:var(--green-dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:54px;position:sticky;top:0;z-index:100}
+.nav-brand{color:#fff;font-size:15px;font-weight:500;letter-spacing:.02em;text-decoration:none}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.78);font-size:13px;text-decoration:none;transition:color .15s}
+.nav-links a:hover{color:#fff}
+@media(max-width:640px){.nav-links{display:none}}
+
+/* ── HERO ── */
+.hero{background:var(--green-dark);padding:4rem 2rem 4.5rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(64,145,108,.35),transparent);pointer-events:none}
+.avatar{width:96px;height:96px;border-radius:50%;background:var(--green-accent);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:500;color:#fff;margin:0 auto 1.25rem;border:3px solid rgba(255,255,255,.25)}
+.hero h1{color:#fff;font-size:clamp(24px,5vw,32px);font-weight:500;margin-bottom:.35rem}
+.hero-sub{color:rgba(255,255,255,.78);font-size:17px;margin-bottom:1rem}
+.hero-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-bottom:1.5rem}
+.badge{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:500}
+.badge-gold{background:var(--gold-light);color:#7D6608}
+.badge-green{background:rgba(64,145,108,.22);color:#B7E4C7;border:1px solid rgba(183,228,199,.3)}
+.badge-white{background:rgba(255,255,255,.12);color:rgba(255,255,255,.9);border:1px solid rgba(255,255,255,.2)}
+.hero-desc{color:rgba(255,255,255,.72);font-size:14px;max-width:560px;margin:0 auto 1.75rem;line-height:1.7}
+.btn-outline{display:inline-block;padding:8px 22px;border:1.5px solid rgba(255,255,255,.5);border-radius:6px;color:#fff;font-size:14px;text-decoration:none;transition:all .15s;margin:0 .4rem}
+.btn-outline:hover{background:rgba(255,255,255,.12)}
+.btn-solid{background:var(--green-accent);border-color:var(--green-accent)}
+.btn-solid:hover{background:#52b788;border-color:#52b788}
+
+/* ── MAIN ── */
+main{max-width:860px;margin:0 auto;padding:2rem 1.25rem 4rem}
+
+/* ── SECTION HEADER ── */
+.sec-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--green-accent);margin-bottom:.4rem}
+.sec-title{font-size:22px;font-weight:500;color:var(--text-primary);margin-bottom:1.5rem;padding-bottom:.6rem;border-bottom:1.5px solid var(--border)}
+section{margin-bottom:3.5rem}
+
+/* ── STAT GRID ── */
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:2.5rem}
+.stat-card{background:var(--surface-2);border:0.5px solid var(--border);border-radius:12px;padding:1rem 1.1rem;text-align:center}
+.stat-num{font-size:26px;font-weight:500;color:var(--green-accent);line-height:1}
+.stat-sub{font-size:12px;color:var(--text-secondary);margin-top:4px}
+
+/* ── CERTS ── */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.cert-card{background:var(--surface-2);border:0.5px solid var(--border);border-radius:12px;padding:1rem 1.1rem;display:flex;gap:10px;align-items:flex-start}
+.cert-icon{width:36px;height:36px;border-radius:8px;background:var(--green-light);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cert-icon i{color:var(--green-mid);font-size:18px}
+.cert-title{font-size:14px;font-weight:500;color:var(--text-primary);line-height:1.35}
+.cert-meta{font-size:12px;color:var(--text-muted);margin-top:3px}
+
+/* ── TIMELINE ── */
+.timeline{position:relative;padding-left:22px}
+.timeline::before{content:'';position:absolute;left:0;top:6px;bottom:6px;width:1.5px;background:var(--border-strong)}
+.tl-item{position:relative;margin-bottom:1.75rem}
+.tl-dot{position:absolute;left:-26.5px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--green-accent);border:2px solid var(--surface-0)}
+.tl-year{font-size:12px;font-weight:600;color:var(--green-accent);margin-bottom:2px}
+.tl-role{font-size:15px;font-weight:500;color:var(--text-primary)}
+.tl-org{font-size:13px;color:var(--text-secondary)}
+.tl-desc{font-size:13px;color:var(--text-secondary);margin-top:5px;line-height:1.55}
+
+/* ── SKILLS ── */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.skill-group{background:var(--surface-2);border:0.5px solid var(--border);border-radius:12px;padding:1rem 1.1rem}
+.skill-group h4{font-size:13px;font-weight:600;color:var(--green-accent);margin-bottom:.6rem;display:flex;align-items:center;gap:6px}
+.skill-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12px;background:var(--surface-0);border:0.5px solid var(--border);border-radius:4px;padding:3px 8px;color:var(--text-secondary)}
+
+/* ── RESEARCH ── */
+.research-list{display:flex;flex-direction:column;gap:14px}
+.research-card{background:var(--surface-2);border:0.5px solid var(--border);border-radius:12px;padding:1rem 1.25rem;border-left:3px solid var(--green-accent)}
+.research-title{font-size:14px;font-weight:500;color:var(--text-primary);margin-bottom:4px}
+.research-meta{font-size:12px;color:var(--text-muted)}
+.research-abstract{font-size:13px;color:var(--text-secondary);margin-top:6px;line-height:1.55}
+
+/* ── TESTIMONIALS ── */
+.testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.tcard{background:var(--surface-2);border:0.5px solid var(--border);border-radius:12px;padding:1.1rem 1.25rem}
+.tcard blockquote{font-size:13.5px;color:var(--text-secondary);line-height:1.65;font-style:italic;margin-bottom:.8rem}
+.tcard cite{font-size:12px;color:var(--text-muted);font-style:normal}
+
+/* ── ACHIEVEMENTS ── */
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.ach-card{background:var(--gold-light);border:0.5px solid #D4AC0D33;border-radius:12px;padding:1rem 1.1rem;display:flex;gap:10px;align-items:flex-start}
+.ach-card i{color:var(--gold);font-size:20px;margin-top:2px;flex-shrink:0}
+.ach-title{font-size:13.5px;font-weight:500;color:#5D4037;line-height:1.4}
+.ach-detail{font-size:12px;color:#795548;margin-top:3px}
+
+/* ── RESULTS DATA ── */
+.results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:1.5rem}
+.result-card{background:var(--surface-2);border:0.5px solid var(--border);border-radius:12px;padding:1rem 1.1rem;text-align:center}
+.result-subject{font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem}
+.result-gain{font-size:28px;font-weight:500;color:var(--green-accent)}
+.result-range{font-size:12px;color:var(--text-secondary);margin-top:3px}
+
+/* ── CONTACT ── */
+.contact-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:.5rem}
+.contact-item{display:flex;align-items:center;gap:8px;background:var(--surface-2);border:0.5px solid var(--border);border-radius:8px;padding:8px 14px;font-size:13.5px}
+.contact-item i{color:var(--green-accent);font-size:17px}
+
+/* ── FOOTER ── */
+footer{background:var(--green-dark);text-align:center;padding:2rem 1rem;color:rgba(255,255,255,.55);font-size:13px;line-height:1.8}
+footer strong{color:rgba(255,255,255,.8);font-weight:500}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#">Dr. Rahna K Rathnan</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="avatar">RR</div>
+  <h1>Dr. Rahna K Rathnan</h1>
+  <p class="hero-sub">Senior Biology Teacher &amp; Educational Researcher</p>
+  <div class="hero-meta">
+    <span class="badge badge-white"><i class="ti ti-building-school"></i> JSS Private School Dubai</span>
+    <span class="badge badge-gold"><i class="ti ti-star"></i> UAE Golden Visa Holder</span>
+    <span class="badge badge-white"><i class="ti ti-certificate"></i> UAE Teacher Professional Licence</span>
+    <span class="badge badge-green"><i class="ti ti-file-text"></i> 12+ Peer-Reviewed Publications</span>
+  </div>
+  <p class="hero-desc">PhD-qualified educator and researcher integrating neuroscience, transformative pedagogy, and CBSE curriculum design to develop future-ready science learners across the UAE, Bahrain, and India.</p>
+  <a href="#research" class="btn-outline btn-solid">View Research</a>
+  <a href="#contact" class="btn-outline">Get in touch</a>
+</div>
+
+<main>
+
+  <!-- ABOUT STATS -->
+  <div class="stat-grid" id="about">
+    <div class="stat-card"><div class="stat-num">20+</div><div class="stat-sub">Years in education</div></div>
+    <div class="stat-card"><div class="stat-num">12+</div><div class="stat-sub">Peer-reviewed publications</div></div>
+    <div class="stat-card"><div class="stat-num">+8.79%</div><div class="stat-sub">CBSE Biology gain (3 yr)</div></div>
+    <div class="stat-card"><div class="stat-num">72</div><div class="stat-sub">Students in BBL study</div></div>
+    <div class="stat-card"><div class="stat-num">3</div><div class="stat-sub">Countries taught</div></div>
+    <div class="stat-card"><div class="stat-num">94%</div><div class="stat-sub">Student confidence impact</div></div>
+  </div>
+
+  <!-- CREDENTIALS -->
+  <section id="credentials">
+    <p class="sec-label">Qualifications</p>
+    <h2 class="sec-title">Credentials &amp; Certifications</h2>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-icon"><i class="ti ti-school"></i></div>
+        <div><div class="cert-title">PhD in Biotechnology</div><div class="cert-meta">Doctoral research — India</div></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon"><i class="ti ti-certificate"></i></div>
+        <div><div class="cert-title">UAE Teacher Professional Licence</div><div class="cert-meta">Ministry of Education, UAE</div></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon"><i class="ti ti-star"></i></div>
+        <div><div class="cert-title">UAE Golden Visa</div><div class="cert-meta">Exceptional talent category</div></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon"><i class="ti ti-chart-bar"></i></div>
+        <div><div class="cert-title">ISO 9001 Internal Auditor</div><div class="cert-meta">Quality Management Systems</div></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon"><i class="ti ti-book"></i></div>
+        <div><div class="cert-title">CBSE Resource Person</div><div class="cert-meta">Curriculum Committee — NEP 2020</div></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon"><i class="ti ti-dna-2"></i></div>
+        <div><div class="cert-title">Molecular Biology &amp; Genetics</div><div class="cert-meta">PhD research specialisation</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <p class="sec-label">Career</p>
+    <h2 class="sec-title">Professional Experience</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2015 – Present</div>
+        <div class="tl-role">Senior Biology Teacher</div>
+        <div class="tl-org">JSS Private School Dubai — CBSE, Al Quoz, UAE</div>
+        <div class="tl-desc">Teaching Grade 10–12 Biology with Brain-Based Learning and transformative pedagogy. Three-year longitudinal action research (2021–2024, n=72) producing measurable CBSE exam score gains. Lesson plans integrating CBL, DSIB/KHDA Outstanding indicators, UAE National Priorities (D33, SDGs), Bloom's Taxonomy, SOLO Taxonomy, and Theory of Knowledge.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">Earlier — Bahrain</div>
+        <div class="tl-role">Science Teacher</div>
+        <div class="tl-org">Secondary School — Kingdom of Bahrain</div>
+        <div class="tl-desc">Secondary science instruction; cross-curricular programming and curriculum review committee contribution.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">Early career — India</div>
+        <div class="tl-role">Researcher &amp; Educator</div>
+        <div class="tl-org">Research Institutions, India</div>
+        <div class="tl-desc">Government-funded scientific research in biotechnology and molecular biology producing 12+ peer-reviewed publications spanning cell biology, genetics, and applied biotechnology.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEDAGOGY -->
+  <section id="skills">
+    <p class="sec-label">Expertise</p>
+    <h2 class="sec-title">Pedagogy &amp; Teaching Frameworks</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4><i class="ti ti-brain"></i> Learning Science</h4>
+        <div class="skill-tags">
+          <span class="tag">Brain-Based Learning</span><span class="tag">Transformative Pedagogy</span><span class="tag">Neuroplasticity</span><span class="tag">Metacognition</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4><i class="ti ti-category"></i> Frameworks</h4>
+        <div class="skill-tags">
+          <span class="tag">Bloom's Taxonomy</span><span class="tag">SOLO Taxonomy</span><span class="tag">UDL</span><span class="tag">Theory of Knowledge</span><span class="tag">Project Zero</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4><i class="ti ti-bulb"></i> Instructional Design</h4>
+        <div class="skill-tags">
+          <span class="tag">Challenge-Based Learning</span><span class="tag">Inquiry Learning</span><span class="tag">Differentiated Instruction</span><span class="tag">Gamification</span><span class="tag">Spaced Repetition</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4><i class="ti ti-microscope"></i> Subject Expertise</h4>
+        <div class="skill-tags">
+          <span class="tag">Molecular Biology</span><span class="tag">Genetics</span><span class="tag">Biotechnology</span><span class="tag">CBSE Biology Gr 10–12</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4><i class="ti ti-chart-line"></i> Assessment &amp; Quality</h4>
+        <div class="skill-tags">
+          <span class="tag">DSIB/KHDA Outstanding</span><span class="tag">ISO 9001 Audit</span><span class="tag">Action Research</span><span class="tag">Mixed Methods</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4><i class="ti ti-world"></i> Languages</h4>
+        <div class="skill-tags">
+          <span class="tag">English</span><span class="tag">Malayalam</span><span class="tag">Hindi</span><span class="tag">Tamil</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <p class="sec-label">Publications &amp; Research</p>
+    <h2 class="sec-title">Research &amp; Scholarly Work</h2>
+    <div class="research-list">
+      <div class="research-card">
+        <div class="research-title">Integrating Brain-Based Learning with Transformative Pedagogy in Science: Impact on Academic Achievement, Holistic Development, and Global Citizenship</div>
+        <div class="research-meta">International Education and Research Journal (IERJ) · 2026 · Corresponding Author · ISSN 2455-295X</div>
+        <div class="research-abstract">Three-year longitudinal action research (Grade 12, n=72, JSS Private School Dubai, 2021–2024). Demonstrated consistent CBSE Biology +8.79%, Chemistry +7.80%, Physics +6.27% examination gains alongside transformative improvements in self-efficacy, metacognition, and global citizenship orientation across 72 students.</div>
+      </div>
+      <div class="research-card">
+        <div class="research-title">NeuroTransform: Brain-Based Learning Integrated with Transformative Pedagogy</div>
+        <div class="research-meta">International Conference Presentation · Dual-presenter session with Ms. Smitha Vakkayil · JSS Private School Dubai</div>
+        <div class="research-abstract">Presented the NeuroTransform model linking neuroscience (Caine &amp; Caine, Jensen) with Mezirow and Freire's transformative frameworks; demonstrated implementation pathways and longitudinal student outcome data across three Science subjects.</div>
+      </div>
+      <div class="research-card">
+        <div class="research-title">12+ Peer-Reviewed Publications — Molecular Biology, Genetics &amp; Biotechnology</div>
+        <div class="research-meta">Research Institutions · India, Bahrain, UAE · Government-funded research</div>
+        <div class="research-abstract">Peer-reviewed publications spanning cell biology, applied genetics, biotechnology, and science education. Government-funded research background providing a strong evidence-based foundation for classroom-level inquiry design.</div>
+      </div>
+      <div class="research-card">
+        <div class="research-title">CBSE Curriculum Committee Contributor — NEP 2020</div>
+        <div class="research-meta">CBSE Resource Person · New Education Policy 2020 · National Board Level</div>
+        <div class="research-abstract">Recognised by CBSE as a Resource Person and Curriculum Committee contributor under NEP 2020, shaping Biology syllabus design at the national board level alongside peer review of assessment frameworks.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results">
+    <p class="sec-label">Evidence of Impact</p>
+    <h2 class="sec-title">Student Achievement Results (2022–2024)</h2>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-subject">Biology</div>
+        <div class="result-gain">+8.79%</div>
+        <div class="result-range">83.51% → 92.30%</div>
+      </div>
+      <div class="result-card">
+        <div class="result-subject">Chemistry</div>
+        <div class="result-gain">+7.80%</div>
+        <div class="result-range">82.20% → 90.00%</div>
+      </div>
+      <div class="result-card">
+        <div class="result-subject">Physics</div>
+        <div class="result-gain">+6.27%</div>
+        <div class="result-range">81.30% → 87.57%</div>
+      </div>
+      <div class="result-card">
+        <div class="result-subject">Overall Mean</div>
+        <div class="result-gain">+7.62%</div>
+        <div class="result-range">82.34% → 89.96%</div>
+      </div>
+    </div>
+
+    <div class="testimonials">
+      <div class="tcard">
+        <blockquote>"Integrated Brain-Based Learning and Transformative Pedagogy made Science meaningful, engaging, and relevant to real life. It improved my critical thinking, problem-solving, confidence, and ability to apply scientific concepts beyond the classroom."</blockquote>
+        <cite>— Nihal, Grade 12, JSS Private School Dubai</cite>
+      </div>
+      <div class="tcard">
+        <blockquote>"The integrated approach has truly transformed the way I learn. It makes complex concepts easier to understand, encourages curiosity, and helps me connect learning to real-life situations. It's not just about studying harder — it's about learning smarter!"</blockquote>
+        <cite>— Grade 12 Science Student, JSS Private School Dubai</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <p class="sec-label">Recognition</p>
+    <h2 class="sec-title">Achievements &amp; Recognition</h2>
+    <div class="ach-grid">
+      <div class="ach-card">
+        <i class="ti ti-star"></i>
+        <div><div class="ach-title">UAE Golden Visa</div><div class="ach-detail">Exceptional talent recognition</div></div>
+      </div>
+      <div class="ach-card">
+        <i class="ti ti-trophy"></i>
+        <div><div class="ach-title">CBSE National Resource Person</div><div class="ach-detail">Biology curriculum — NEP 2020</div></div>
+      </div>
+      <div class="ach-card">
+        <i class="ti ti-chart-bar"></i>
+        <div><div class="ach-title">DSIB/KHDA Outstanding</div><div class="ach-detail">Teaching quality at Outstanding level</div></div>
+      </div>
+      <div class="ach-card">
+        <i class="ti ti-certificate"></i>
+        <div><div class="ach-title">ISO 9001 Internal Auditor</div><div class="ach-detail">Quality management certified</div></div>
+      </div>
+      <div class="ach-card">
+        <i class="ti ti-microscope"></i>
+        <div><div class="ach-title">12+ Peer-Reviewed Publications</div><div class="ach-detail">Government-funded research — 3 countries</div></div>
+      </div>
+      <div class="ach-card">
+        <i class="ti ti-world"></i>
+        <div><div class="ach-title">Global Conference Presenter</div><div class="ach-detail">NeuroTransform research — international forums</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <p class="sec-label">Get in touch</p>
+    <h2 class="sec-title">Contact</h2>
+    <div class="contact-row">
+      <div class="contact-item"><i class="ti ti-building-school"></i> JSS Private School, Al Quoz, Dubai, UAE</div>
+      <div class="contact-item"><i class="ti ti-mail"></i> science@jsspsdubai.com</div>
+      <div class="contact-item"><i class="ti ti-certificate"></i> UAE Teacher Professional Licence</div>
+      <div class="contact-item"><i class="ti ti-book"></i> CBSE-Affiliated · KHDA Licensed</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <strong>Dr. Rahna K Rathnan</strong> · Senior Biology Teacher &amp; Educational Researcher<br>
+  JSS Private School Dubai · CBSE-Affiliated · Al Quoz, UAE<br>
+  PhD Biotechnology · UAE Golden Visa · 12+ Publications · UAE Teacher Professional Licence
+  <br><br>
+  <em style="font-size:12px;color:rgba(255,255,255,.4)">"When the Brain is engaged, Pedagogy is Transformation, and Learning is Connected to Life — Excellence becomes Inevitable."</em>
+</footer>
+
+</body>
+</html>
